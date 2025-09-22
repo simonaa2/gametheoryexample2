@@ -1,5 +1,14 @@
-altair
-numpy
-pandas
-pydeck
-streamlit
+# Game Theory Analyzer in R
+# This application uses R for game theory calculations
+# and provides both command-line and web interfaces
+
+# R base installation required (no additional R packages needed)
+# Optional: For enhanced web experience
+# - shiny (for potential Shiny apps)  
+# - plotly (for advanced visualizations)
+
+# For web server hosting the HTML interface
+# Python 3 with http.server module (included in standard library)
+
+# R version 4.0 or higher recommended
+# No additional dependencies required for core functionality
