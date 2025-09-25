@@ -20,29 +20,37 @@ LOGGER = get_logger(__name__)
 
 def run():
     st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
+        page_title="Game Theory Applications",
+        page_icon="🎮",
     )
 
-    st.write("# Welcome to Streamlit! 👋")
+    st.write("# Game Theory Applications 🎮")
 
-    st.sidebar.success("Select a demo above.")
+    st.sidebar.success("Select a game theory application above.")
 
     st.markdown(
         """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+        Welcome to our interactive Game Theory Applications!
+        
+        This application provides tools to analyze and understand various concepts in game theory.
+        **👈 Select an application from the sidebar** to explore different game theory scenarios:
+        
+        ### Available Applications:
+        - **Nash Equilibrium Calculator** - Find Nash equilibria in strategic form games
+        - **Prisoner's Dilemma** - Interactive prisoner's dilemma game simulation
+        - **Strategic Form Games** - Analyze payoff matrices and dominant strategies
+        - **Mixed Strategy Calculator** - Calculate optimal mixed strategies
+        
+        ### About Game Theory:
+        Game theory is the mathematical study of strategic decision making among rational agents. 
+        It provides tools for understanding situations where the outcome for each participant 
+        depends on the actions of all participants.
+        
+        ### Key Concepts:
+        - **Nash Equilibrium**: A strategy profile where no player can improve by unilaterally changing strategy
+        - **Dominant Strategy**: A strategy that is optimal regardless of what other players do
+        - **Payoff Matrix**: A table showing the outcomes for different strategy combinations
+        - **Mixed Strategy**: A probability distribution over pure strategies
     """
     )
 
