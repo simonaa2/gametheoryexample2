@@ -1,5 +1,5 @@
-altair
-numpy
-pandas
-pydeck
-streamlit
+altair==5.5.0
+numpy==2.3.3
+pandas==2.3.2
+pydeck==0.9.1
+streamlit==1.50.0

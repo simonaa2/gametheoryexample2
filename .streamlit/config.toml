@@ -1,0 +1,19 @@
+[logger]
+# Level of logging: 'error', 'warning', 'info', or 'debug'.
+level = "info"
+
+[server]
+# If false, will attempt to open a browser window on start.
+headless = false
+
+# Automatically rerun script when the file is modified.
+runOnSave = true
+
+# The port where the server will listen for client and browser connections.
+port = 8501
+
+# Enables support for Cross-Origin Resource Sharing (CORS) protection, for added security.
+enableCORS = true
+
+# Enables support for Cross-Site Request Forgery (XSRF) protection, for added security.
+enableXsrfProtection = true
