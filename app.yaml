@@ -1,0 +1,18 @@
+runtime: python311
+
+# App Engine configuration for Streamlit app
+env_variables:
+  # Streamlit configuration
+  STREAMLIT_SERVER_PORT: 8080
+  STREAMLIT_SERVER_ADDRESS: 0.0.0.0
+  STREAMLIT_SERVER_HEADLESS: true
+  STREAMLIT_BROWSER_GATHER_USAGE_STATS: false
+
+# Automatic scaling configuration
+automatic_scaling:
+  min_instances: 0
+  max_instances: 10
+  target_cpu_utilization: 0.6
+
+# App Engine service configuration  
+service: default
