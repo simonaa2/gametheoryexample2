@@ -13,6 +13,8 @@ This app provides interactive demonstrations of key game theory concepts:
 
 ## Running the Application
 
+### Local Development
+
 1. Install dependencies:
 ```bash
 pip install -r requirements.txt
@@ -22,6 +24,24 @@ pip install -r requirements.txt
 ```bash
 streamlit run Hello.py
 ```
+
+### Docker
+
+1. Build and run with Docker:
+```bash
+docker build -t gametheory-app .
+docker run -p 8501:8501 gametheory-app
+```
+
+### Google Cloud Deployment
+
+This application is optimized for Google Cloud Platform deployment:
+
+- **App Engine**: `./deploy-scripts/deploy-app-engine.sh YOUR_PROJECT_ID`
+- **Cloud Run**: `./deploy-scripts/deploy-cloud-run.sh YOUR_PROJECT_ID`
+- **CI/CD**: Use `cloudbuild.yaml` for automated deployments
+
+See [DEPLOY.md](DEPLOY.md) for detailed deployment instructions.
 
 ## Game Theory Concepts Covered
 
