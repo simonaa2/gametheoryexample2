@@ -37,11 +37,12 @@ docker run -p 8501:8501 gametheory-app
 
 This application is optimized for Google Cloud Platform deployment:
 
+- **Quick Deploy**: `./deploy-scripts/redeploy.sh cloud-run YOUR_PROJECT_ID`
 - **App Engine**: `./deploy-scripts/deploy-app-engine.sh YOUR_PROJECT_ID`
 - **Cloud Run**: `./deploy-scripts/deploy-cloud-run.sh YOUR_PROJECT_ID`
 - **CI/CD**: Use `cloudbuild.yaml` for automated deployments
 
-See [DEPLOY.md](DEPLOY.md) for detailed deployment instructions.
+See [DEPLOY.md](DEPLOY.md) for detailed deployment instructions and [REDEPLOYMENT.md](REDEPLOYMENT.md) for redeployment and troubleshooting help.
 
 ## Game Theory Concepts Covered
 

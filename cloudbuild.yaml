@@ -4,13 +4,18 @@
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/gametheory-app:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/gametheory-app:$COMMIT_SHA', '-t', 'gcr.io/$PROJECT_ID/gametheory-app:latest', '.']
     id: 'build-image'
 
-  # Push the Docker image to Container Registry
+  # Push the Docker image to Container Registry (with both tags)
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/gametheory-app:$COMMIT_SHA']
-    id: 'push-image'
+    id: 'push-image-sha'
+    waitFor: ['build-image']
+    
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/gametheory-app:latest']
+    id: 'push-image-latest'
     waitFor: ['build-image']
 
   # Deploy to Cloud Run
@@ -29,15 +34,17 @@ steps:
       - '--max-instances=10'
       - '--set-env-vars=STREAMLIT_SERVER_HEADLESS=true,STREAMLIT_SERVER_PORT=8501,STREAMLIT_SERVER_ADDRESS=0.0.0.0,STREAMLIT_BROWSER_GATHER_USAGE_STATS=false'
     id: 'deploy-cloud-run'
-    waitFor: ['push-image']
+    waitFor: ['push-image-sha', 'push-image-latest']
 
 # Options for the build
 options:
   logging: CLOUD_LOGGING_ONLY
+  machineType: 'N1_HIGHCPU_8'
 
 # Artifacts to keep
 images:
   - 'gcr.io/$PROJECT_ID/gametheory-app:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/gametheory-app:latest'
 
 # Build timeout
 timeout: '1200s'

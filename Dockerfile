@@ -41,8 +41,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
 
 # Run the Streamlit application
 # Support both development (8501) and production (8080) ports
-CMD streamlit run Hello.py \
-    --server.headless true \
-    --server.port ${STREAMLIT_SERVER_PORT:-8501} \
-    --server.address 0.0.0.0 \
-    --browser.gatherUsageStats false
+CMD ["sh", "-c", "streamlit run Hello.py --server.headless true --server.port ${STREAMLIT_SERVER_PORT:-8501} --server.address 0.0.0.0 --browser.gatherUsageStats false"]
